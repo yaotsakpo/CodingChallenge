@@ -23,6 +23,18 @@ public class RewardPointsService {
         return totalRewardPoints;
     }
 
+    public int getRewardPerTransaction(Long id) {
+        Transaction transaction = transactionService.getTransaction(id);
+        int reward = 0;
+
+        if(transaction != null){
+            reward = calculateRewardPointsForTransaction(transaction.getAmount());
+        }
+        return reward;
+    }
+
+
+
     public int calculateRewardPointsForTransaction(double transactionAmount) {
         int points = 0;
         if (transactionAmount > 100) {

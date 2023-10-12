@@ -23,6 +23,7 @@ public class TransactionController {
 
         List<TransactionDTO> transactionDTOs = transactions.stream()
                 .map(transaction -> new TransactionDTO(
+                        transaction.getId(),
                         transaction.getCustomerId(),
                         transaction.getAmount(),
                         transaction.getTransactionDate()
@@ -38,6 +39,7 @@ public class TransactionController {
 
         List<TransactionDTO> transactionDTOs = transactions.stream()
                 .map(transaction -> new TransactionDTO(
+                        transaction.getId(),
                         transaction.getCustomerId(),
                         transaction.getAmount(),
                         transaction.getTransactionDate()

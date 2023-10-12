@@ -18,6 +18,12 @@ public class TransactionService {
         return transactionRepository.save(transaction);
     }
 
+    public Transaction getTransaction(Long id) {
+        // Implement logic to add a transaction to the database
+        return (transactionRepository.findById(id)).orElse(null);
+    }
+
+
     public List<Transaction> getAllTransactions() {
         // Implement logic to retrieve all transactions from the database
         return transactionRepository.findAll();
