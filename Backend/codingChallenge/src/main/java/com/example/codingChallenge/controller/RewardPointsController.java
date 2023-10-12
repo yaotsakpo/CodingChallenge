@@ -27,6 +27,7 @@ public class RewardPointsController {
     @GetMapping("/{customerId}")
     public ResponseEntity<Integer> calculateRewardPoints(@PathVariable Long customerId) {
         int rewardPoints = rewardPointsService.calculateRewardPoints(customerId);
+        System.out.println(rewardPoints);
         return ResponseEntity.ok(rewardPoints);
     }
 
